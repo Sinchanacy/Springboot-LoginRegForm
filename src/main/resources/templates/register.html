@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section>
+    <h2>Registration Form</h2>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-md-3">
+
+
+                <div th:if="${param.success}">
+                    <div class="alert alert-info">You have successfully registered!!!</div>
+                </div>
+                <h4>
+                    <form th:action="@{/register}"  method="post" th:object="${user}"  >
+
+                        <div style="padding: 0px 0px 10px 20px;" class="form-group">
+                            <label class="control-label" for="firstname">Enter Full Name :</label> <input id="firstname" type="text"
+                                                                                                         th:field="*{firstname}" class="form-control" required autofocus="autofocus">
+                        </div>
+
+
+                        <div style="padding: 0px 0px 10px 20px;"  class="form-group">
+                            <label class="control-label" for="email">Enter Email_Id :</label> <input id="email" type="text"
+                                                                                                     th:field="*{email}" class="form-control" required autofocus="autofocus">
+                        </div>
+                        <div style="padding: 0px 0px 10px 20px;" class="form-group">
+                            <label class="control-label" for="password">Enter password :</label> <input id="password" type="password"
+                                                                                                        th:field="*{password}" class="form-control" required autofocus="autofocus">
+                        </div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-success">Register</button></p>
+                    </form>
+                    <div>Already have an account?&nbsp;<a href="/" th:href="@{/login}">Login</a> </div>
+                </h4>
+
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+</body>
+</html>
+
